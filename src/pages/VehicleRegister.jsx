@@ -41,7 +41,7 @@ export default function VehicleRegister() {
       swal(" Fields Cannot empty !", "Please enter all data !", "error");
     } else {
       console.log(userData);
-      axios.post("http://localhost:5000/api/vehicle", userData)
+      axios.post("https://vehicleregistration-be.onrender.com/api/vehicle", userData)
         .then(function (response) {
           console.log(response);
           setVehicleType("");

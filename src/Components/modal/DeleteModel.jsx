@@ -27,7 +27,7 @@ export default function DeleteClothModel(props) {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/vehicle/${params.vid}`)
+        axios.get(`https://vehicleregistration-be.onrender.com/api/vehicle/${params.vid}`)
             .then(res => {
                 console.log(res)
                 setPosts(res.data)
@@ -51,7 +51,7 @@ export default function DeleteClothModel(props) {
     const DeleteShow = () => {
         console.log(params.vid)
 
-        axios.get("http://localhost:5000/api/vehicle/" + params.vid)
+        axios.get("https://vehicleregistration-be.onrender.com/api/vehicle/" + params.vid)
             .then(function (response) {
                 setVid('');
                 setLicenseType('');
@@ -72,7 +72,7 @@ export default function DeleteClothModel(props) {
 
     function submitForm(e) {
         e.preventDefault();
-        axios.delete('http://localhost:5000/api/vehicle/delete/' + params.vid, vehicleData)
+        axios.delete('https://vehicleregistration-be.onrender.com/api/vehicle/delete/' + params.vid, vehicleData)
             .then(function (response) {
                 setShow(false);
                 swal({ text: "Cloth Successfully Deleted", icon: "success", button: "Okay!" }).then((value) => {

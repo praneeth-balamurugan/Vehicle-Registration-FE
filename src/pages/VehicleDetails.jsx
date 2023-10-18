@@ -26,7 +26,7 @@ export default function VehicleDetails(props) {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/vehicle/${params.vid}`)
+        axios.get(`https://vehicleregistration-be.onrender.com/api/vehicle/${params.vid}`)
             .then(res => {
                 console.log(res)
                 setPosts(res.data)

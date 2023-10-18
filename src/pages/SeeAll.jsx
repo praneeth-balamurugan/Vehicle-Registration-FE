@@ -9,7 +9,7 @@ const SeeAll = () => {
 
     let users = []
     const setdatas = () => {
-        axios.get('http://localhost:5000/api/vehicle/')
+        axios.get('https://vehicleregistration-be.onrender.com/api/vehicle/')
             .then(res => {
                 users = res.data;
                 setVechicle(users);
@@ -22,7 +22,7 @@ const SeeAll = () => {
     }, [vehicle])
 
     const deletepro = (vid) => {
-        axios.delete(`http://localhost:5000/api/vehicle/delete/${vid}`).then(
+        axios.delete(`https://vehicleregistration-be.onrender.com/api/vehicle/delete/${vid}`).then(
             setVechicle(
                 vehicle.filter((val) => {
                     // return val._id !== id;

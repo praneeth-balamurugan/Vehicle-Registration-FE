@@ -25,7 +25,7 @@ export default function UpdateModel(props) {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/vehicle/${params.vid}`)
+        axios.get(`https://vehicleregistration-be.onrender.com/api/vehicle/${params.vid}`)
             .then(res => {
                 console.log(res)
                 setPosts(res.data)
@@ -48,7 +48,7 @@ export default function UpdateModel(props) {
 
     const updateShow = () => {
         // setVid(props.vid)
-        axios.get('http://localhost:5000/api/vehicle/' + params.vid).then(function (response) {
+        axios.get('https://vehicleregistration-be.onrender.com/api/vehicle/' + params.vid).then(function (response) {
             console.log(response.data)
             setVid(response.data['vid']);
             setLicenseType(response.data['license_type']);
@@ -68,7 +68,7 @@ export default function UpdateModel(props) {
     function submitForm(e) {
         e.preventDefault();
 
-        axios.put('http://localhost:5000/api/vehicle/update/' + params.vid, vehicleData)
+        axios.put('https://vehicleregistration-be.onrender.com/api/vehicle/update/' + params.vid, vehicleData)
             .then(function (response) {
                 console.log(response.data)
                 setVid('');
